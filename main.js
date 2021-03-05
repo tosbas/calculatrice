@@ -32,6 +32,7 @@ reset.addEventListener("click", function(){
 
     input.value = ""
     resultat.remove()
+    somme = ""
 
 })
 

@@ -27,6 +27,7 @@ h1{
     height: 300px;
     border-radius: 10px;
     border:5px solid red;
+    position: relative
     
 
 }
@@ -65,10 +66,20 @@ h1{
 #resultat{
     width: 150px;
     height: auto;
-    margin: auto;
+    margin: 50px auto;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
+}
+
+#card
+{
+    position: absolute;
+    background-color: steelblue;
+    width: 100%;
+    bottom: 0;
+    font-size: 15px;
+    border-radius: 0 0 5px 5px; 
 }
 
 @media screen and (max-width: 361px)
