@@ -26,7 +26,7 @@ h1{
     width: 400px;
     height: 300px;
     border-radius: 10px;
-    border:5px solid red;
+    border:5px solid rgb(31, 31, 31);
     position: relative
     
 
@@ -63,6 +63,12 @@ h1{
     outline: none;
 }
 
+#calculer:hover,#reset:hover
+{
+    box-shadow: rgb(8, 8, 8) -2px -2px 2px;
+
+}
+
 #resultat{
     width: 150px;
     height: auto;
@@ -76,6 +82,8 @@ h1{
 {
     position: absolute;
     background-color: steelblue;
+    color: white;
+    padding: 5px 0 5px 0;
     width: 100%;
     bottom: 0;
     font-size: 15px;
