@@ -10,6 +10,14 @@ input.addEventListener("input",function(){
     
     somme = input.value
 
+    let reg = /[a-z]/.test(somme)
+    
+ if(reg === true)
+ {
+    conteneur.appendChild(resultat)
+    resultat.innerText = "Comment tu fait pour calculer des lettres ?!"
+ }   
+
 })
 
 calculer.addEventListener("click", function(){
