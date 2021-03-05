@@ -10,12 +10,12 @@ input.addEventListener("input",function(){
     
     somme = input.value
 
-    let reg = /[a-z]/.test(somme)
+    let reg = /[a-z,é,&,²,',è,_,ç,à,=,^,",-,:,;,!]/.test(somme)
     
  if(reg === true)
  {
     conteneur.appendChild(resultat)
-    resultat.innerText = "Comment tu fait pour calculer des lettres ?!"
+    resultat.innerText = "Comment tu fait pour calculer ça ?!"
  }
  else if(somme.length === 0)
   {
