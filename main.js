@@ -17,7 +17,7 @@ input.addEventListener("input",function(){
     conteneur.appendChild(resultat)
     resultat.innerText = "Comment tu fait pour calculer des lettres ?!"
  }
- else
+ else if(somme.length === 0)
   {
      resultat.remove()
   }
