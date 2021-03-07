@@ -1,102 +1,35 @@
-let input = document.getElementById("saisis")
-let calculer = document.getElementById("calculer")
-let conteneur = document.getElementById("conteneur")
-let reset = document.getElementById("reset")
-let resultat = document.createElement("div")
-resultat.setAttribute("id", "resultat")
-let somme;
+// déclaration des variables globale
 
-input.addEventListener("input",function(){
+let écran = document.getElementById("calcScreen");
+let touches = document.getElementsByClassName("touches")
+let calcule = document.getElementById("calculer");
+let reset = document.getElementById("reset");
+
+let somme = "";
+
+Array.prototype.forEach.call(touches,function(touche){
     
-    somme = input.value
-
-    let reg = /[a-z,é,&,²,',è,_,ç,à,=,^,",-,:,;,!]/.test(somme)
-    
- if(reg === true)
- {
-    conteneur.appendChild(resultat)
-    resultat.innerText = "Comment tu fait pour calculer ça ?!"
- }
- else if(somme.length === 0)
-  {
-     resultat.remove()
-  }
-
-
+    touche.addEventListener("click",function(){
+        écran.innerHTML += touche.innerHTML
+       somme += touche.innerHTML
+    })
 })
 
-calculer.addEventListener("click", function(){
-    
-    conteneur.appendChild(resultat)
 
-    if(somme === undefined || somme === "")
-    {
-        resultat.innerText = "Rien à calculer"
+calcule.addEventListener("click", function(){
+
+    try {
+        écran.innerHTML = eval(somme); 
+    } catch (e) {
+        if (e instanceof SyntaxError) {
+            alert(e.message.innerHTML = "caractéres non autoriser !");
+            location.reload()
+        }
     }
-    else{
 
-        resultat.innerHTML = somme + " = " + eval(somme)
 
-    }
-    
 })
 
 reset.addEventListener("click", function(){
-
-    input.value = ""
-    resultat.remove()
-    somme = ""
-
+    location.reload()
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
