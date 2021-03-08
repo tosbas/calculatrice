@@ -22,7 +22,7 @@ h1{
     background-color: rgb(124, 124, 124);
     justify-content: center;
     display: inline-block;
-    margin:  50px auto;
+    margin:  20px auto;
     width: 400px;
     height: 550px;
     border-radius: 10px;
@@ -103,6 +103,33 @@ h1{
     bottom: 0;
     font-size: 15px;
     border-radius: 0 0 5px 5px; 
+}
+
+
+#resumer
+{
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin:  0px auto 20px ;  
+    background-color: rgb(51, 164, 240);
+    
+    color: white;
+}
+
+#resumer h3
+{
+    background-color: salmon;
+    border-radius: 10px;
+    
+}
+
+#resumer span
+{
+    display: block;
+    margin: 5px;
 }
 
 @media screen and (max-width: 360px)

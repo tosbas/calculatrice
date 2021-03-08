@@ -4,9 +4,14 @@ let écran = document.getElementById("calcScreen");
 let touches = document.getElementsByClassName("touches")
 let calcule = document.getElementById("calculer");
 let reset = document.getElementById("reset");
+let resumer = document.getElementById("resumer")
+let calculeOp;
+let calculeExe = document.createElement("span")
 
 // variable à calculer
 let somme = "";
+
+
 
 // crée un tableau qui me permet d'ajouter un event sur chaque touches
 
@@ -14,7 +19,20 @@ Array.prototype.forEach.call(touches,function(touche){
     
     touche.addEventListener("click",function(){
         écran.innerHTML += touche.innerHTML
-       somme += touche.innerHTML
+        somme += touche.innerHTML
+
+        if(somme.length >= 11)
+        {
+            console.log("yo")
+            alert("trop de chiffre !")
+            somme = ""
+            écran.innerHTML = ""
+        }
+        else
+        {
+            console.log(somme + " " + somme.length)
+            
+        }
     })
 })
 
@@ -22,6 +40,8 @@ Array.prototype.forEach.call(touches,function(touche){
 // récupére la somme et la calcule si possible
 
 calcule.addEventListener("click", function(){
+
+    calculeOp = somme
 
     if(somme === "" || somme === "0")
     {
@@ -32,14 +52,17 @@ calcule.addEventListener("click", function(){
     {
         try
         {
-            
+    
             écran.innerHTML = eval(somme)
+            somme = écran.innerText
+            resumer.appendChild(calculeExe)
+            calculeExe.innerHTML += calculeOp +" = " + eval(somme) +"</br>"
         }
         catch (e)
         {
             if (e instanceof SyntaxError) {
                 alert(e.message.innerHTML = "caractéres non autoriser !");
-                location.reload()
+                // location.reload()
             }
         }
 
@@ -52,3 +75,4 @@ calcule.addEventListener("click", function(){
 reset.addEventListener("click", function(){
     location.reload()
 })
+
