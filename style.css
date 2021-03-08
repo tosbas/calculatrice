@@ -24,7 +24,7 @@ h1{
     display: inline-block;
     margin:  100px auto;
     width: 400px;
-    height: 650px;
+    height: 550px;
     border-radius: 10px;
     border:5px solid rgb(31, 31, 31);
     position: relative
@@ -50,12 +50,10 @@ h1{
 #conteneur
 {
     padding:10px;
-
-
 }
 
 .touches{
-    width: 100px;
+    width: 80px;
     height: 60px;
     margin: 5px;
     font-size: 20px;
@@ -65,10 +63,13 @@ h1{
     outline: none;
 }
 
+
 #calculer, #reset{
 
-    width: 90px;
-    height: 50px;
+    margin: 5px;
+    width: 128px;
+    height: 60px;
+    font-size: 20px;
     margin-bottom: 5px;
     cursor: pointer;
     border: 1px solid black;
@@ -116,12 +117,17 @@ h1{
     #calcBody
     {
         width: 320px;
-        height: 550px;
+        height: 500px;
         
     }
     .touches
     {
         width: 60px;
+        height: 50px;
+    }
+    #calculer,#reset
+    {
+        width: 100px;
         height: 50px;
     }
 }
