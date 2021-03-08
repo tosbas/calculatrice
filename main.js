@@ -2,9 +2,10 @@ let écran = document.getElementById("calcScreen");
 let touches = document.getElementsByClassName("touches")
 let calcule = document.getElementById("calculer");
 let reset = document.getElementById("reset");
-let resumer = document.getElementById("resumer")
-let calculeExe = document.createElement("span")
+let resumer = document.getElementById("resumer");
+let calculeExe = document.createElement("span");
 
+let calculeOp;
 // variable à calculer
 let somme = "";
 
@@ -15,6 +16,8 @@ Array.prototype.forEach.call(touches,function(touche){
     touche.addEventListener("click",function(){
         écran.innerHTML += touche.innerHTML
         somme += touche.innerHTML
+
+        calculeOp = somme
 
         if(somme.length >= 11)
         {
