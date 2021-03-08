@@ -36,8 +36,6 @@ Array.prototype.forEach.call(touches,function(touche){
 
 calcule.addEventListener("click", function(){
 
-    calculeOp = somme
-
     if(somme === "" || somme === "0")
     {
         alert("Rien à calculer")
@@ -57,7 +55,6 @@ calcule.addEventListener("click", function(){
         {
             if (e instanceof SyntaxError) {
                 alert(e.message.innerHTML = "caractéres non autoriser !");
-                // location.reload()
             }
         }
 
