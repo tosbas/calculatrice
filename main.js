@@ -1,17 +1,12 @@
-
-
 let écran = document.getElementById("calcScreen");
 let touches = document.getElementsByClassName("touches")
 let calcule = document.getElementById("calculer");
 let reset = document.getElementById("reset");
 let resumer = document.getElementById("resumer")
-let calculeOp;
 let calculeExe = document.createElement("span")
 
 // variable à calculer
 let somme = "";
-
-
 
 // crée un tableau qui me permet d'ajouter un event sur chaque touches
 
