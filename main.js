@@ -23,7 +23,7 @@ Array.prototype.forEach.call(touches,function(touche){
 
 calcule.addEventListener("click", function(){
 
-    if(somme === "")
+    if(somme === "" || somme === "0")
     {
         alert("Rien à calculer")
         location.reload()
@@ -32,7 +32,8 @@ calcule.addEventListener("click", function(){
     {
         try
         {
-            écran.innerHTML = eval(somme); 
+            
+            écran.innerHTML = eval(somme)
         }
         catch (e)
         {
