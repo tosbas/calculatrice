@@ -21,15 +21,9 @@ Array.prototype.forEach.call(touches,function(touche){
 
         if(somme.length >= 11)
         {
-            console.log("yo")
             alert("trop de chiffre !")
             somme = ""
             écran.innerHTML = ""
-        }
-        else
-        {
-            console.log(somme + " " + somme.length)
-            
         }
     })
 })
