@@ -140,7 +140,8 @@ h1{
     }
     #calcScreen{
         width: 250px;
-        margin-bottom: 0;       
+        margin-bottom: 0;
+        font-size: 40px; 
     }
     #calcBody
     {
