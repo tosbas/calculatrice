@@ -4,10 +4,12 @@ let calcule = document.getElementById("calculer");
 let reset = document.getElementById("reset");
 let resumer = document.getElementById("resumer");
 let calculeExe = document.createElement("span");
-
+let calculeNum = 0;
 let calculeOp;
 // variable à calculer
 let somme = "";
+
+
 
 // crée un tableau qui me permet d'ajouter un event sur chaque touches
 
@@ -25,6 +27,16 @@ Array.prototype.forEach.call(touches,function(touche){
             somme = ""
             écran.innerHTML = ""
         }
+        else if(calculeNum >= 1 )
+        {
+            écran.innerHTML = touche.innerHTML
+            somme = écran.innerText
+            calculeNum--
+            
+        }
+
+        console.log(somme)
+        
     })
 })
 
@@ -42,7 +54,7 @@ calcule.addEventListener("click", function(){
     {
         try
         {
-    
+            calculeNum++
             écran.innerHTML = eval(somme)
             somme = écran.innerText
             resumer.appendChild(calculeExe)
