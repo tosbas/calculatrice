@@ -171,4 +171,7 @@ h1{
         height: 50px;
         
     }
+    #resumer h3{
+        font-size: 15px;
+    }
 }

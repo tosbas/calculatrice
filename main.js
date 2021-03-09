@@ -35,7 +35,6 @@ Array.prototype.forEach.call(touches,function(touche){
             
         }
 
-        console.log(somme)
         
     })
 })
