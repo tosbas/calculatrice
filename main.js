@@ -10,7 +10,7 @@ const emptyMsg = { text: "Rien à calculer", value: undefined };
 
 document.addEventListener("keydown", (e) => {
 
-  let reg = /[0-9,+,\-,\/,*]/gm.test(e.key)
+  let reg = /[0-9,+,.,\-,\/,*]/gm.test(e.key)
 
   if(saisis.innerText.length == 14)
   {
