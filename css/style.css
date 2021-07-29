@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url("/image/calculatrice.jpg");
+  background-image: url("https://tosbas.github.io/calculatrice/image/calculatrice.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -58,7 +58,7 @@ h1 {
   border-radius: 10px;
   font-size: 20px;
   border: 1px solid rgb(255, 115, 0);
-  margin:2px;
+  margin: 2px;
 }
 
 .anim {
