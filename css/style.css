@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url("/image/calculatrice.jpg");
+  background-image: url("https://tosbas.github.io/calculatrice/image/calculatrice.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
