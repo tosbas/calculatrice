@@ -10,73 +10,73 @@ const emptyMsg = { text: "Rien à calculer", value: undefined };
 
 document.addEventListener("keydown", (e) => {
 
-  let reg = /[0-9,+,.,\-,\/,*]/gm.test(e.key)
+    let reg = /[0-9,+,.,\-,\/,*]/gm.test(e.key)
 
-  if(saisis.innerText.length == 14)
-  {
-    ecran.style.overflowY = "scroll"
-  }
-
-  if(e.key == "Backspace")
-  {
-    ecran.removeAttribute("style");
-    saisis.innerText = "";
-  }
-  else if(e.key == "Enter")
-  {
-    if(saisis.innerText != "")
-    {
-      saisis.innerText = arrondir(eval(saisis.innerText));
+    if (saisis.innerText.length == 14) {
+        ecran.style.overflowY = "scroll"
     }
-  }
-  else if(reg == true){
-    saisis.innerText += e.key
-  }
+
+    if (e.key == "Backspace") {
+        ecran.removeAttribute("style");
+        saisis.innerText = "";
+    } else if (e.key == "Enter") {
+        if (saisis.innerText != "") {
+            saisis.innerText = arrondir(eval(saisis.innerText));
+        }
+    } else if (reg == true) {
+        saisis.innerText += e.key
+    }
 })
 
 // Pour chaque touches event au click
 
 touches.forEach((element) => {
-  element.addEventListener("click", function () {
-    element.classList.add("anim");
+    element.addEventListener("click", function() {
+        element.classList.add("anim");
 
-    saisis.innerText += element.innerText;
+        saisis.innerText += element.innerText;
 
-    if(saisis.innerText.length == 14)
-    {
-      ecran.style.overflowY = "scroll"
-    }
+        if (saisis.innerText.length == 14) {
+            ecran.style.overflowY = "scroll"
+        }
 
-    setTimeout(function () {
-      element.classList.remove("anim");
-    }, 100);
-  });
+        setTimeout(function() {
+            element.classList.remove("anim");
+        }, 100);
+    });
 });
 
 // calcule la somme saisis
 
 egale.addEventListener("click", () => {
-  if(saisis.innerText != "")
-  {
-    saisis.innerText = arrondir(eval(saisis.innerText));
-  }
-  
+    if (saisis.innerText != "") {
+        saisis.innerText = arrondir(eval(saisis.innerText));
+    }
+    egale.classList.add("anim2");
+    setTimeout(function() {
+        egale.classList.remove("anim2");
+    }, 100);
+
 });
 
 // reset saisis
 
 reset.addEventListener("click", () => {
+    reset.classList.add("anim2");
     ecran.removeAttribute("style");
     saisis.innerText = "";
+    setTimeout(function() {
+        reset.classList.remove("anim2");
+    }, 100);
 });
 
 // function arrondir le résultat
 
 function arrondir(el) {
-  let reg = /[.][1-9][0]/g.test(el);
-  if (reg == true) {
-    return eval(el).toFixed(1);
-  } else {
-    return eval(el);
-  }
+    let reg = /[.][1-9][0]/g.test(el);
+    if (reg == true) {
+        return eval(el).toFixed(1);
+    } else {
+        return eval(el);
+    }
 }
