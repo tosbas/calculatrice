@@ -1,96 +1,97 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-image: url("https://tosbas.github.io/calculatrice/image/calculatrice.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background-image: url("https://tosbas.github.io/calculatrice/image/calculatrice.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
-  text-shadow: 1px 1px 10px rgb(255, 115, 0);
-  color: white;
-  position: absolute;
-  top: 0;
+    text-shadow: 1px 1px 10px rgb(255, 115, 0);
+    color: white;
+    position: absolute;
+    top: 0;
 }
 
 #corp {
-  border-radius: 20px;
-  border: 2px solid rgb(255, 115, 0);
-  max-width: 280px;
-  box-shadow: 1px 1px 10px 15px;
-  position: absolute;
+    border-radius: 20px;
+    border: 2px solid rgb(255, 115, 0);
+    max-width: 280px;
+    box-shadow: 1px 1px 10px 15px;
+    position: absolute;
 }
 
 #ecran {
-  background-color: green;
-  height: 80px;
-  margin: 5px auto;
-  max-width: 200px;
-  border-radius: 10px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  overflow: hidden;
-  border: 1px solid rgb(255, 115, 0);
+    background-color: green;
+    height: 80px;
+    margin: 5px auto;
+    max-width: 200px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    border: 1px solid rgb(255, 115, 0);
 }
 
 #saisis {
-  font-size: 25px;
-  padding-right: 10px;
-  word-break: break-all;
+    font-size: 25px;
+    padding-right: 10px;
+    word-break: break-all;
 }
 
 .touches,
 #reset,
 #egale {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  font-size: 20px;
-  border: 1px solid rgb(255, 115, 0);
-  margin: 2px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid rgb(255, 115, 0);
+    margin: 2px;
+    background-color: white;
 }
 
 .anim {
-  animation-name: anime;
-  animation-duration: 1s;
-  transition: linear;
+    animation-name: anime;
+    animation-duration: 1s;
+    transition: linear;
 }
 
 @keyframes anime {
-  0% {
-    background-color: rgba(0, 0, 0, 0.384);
-    color: white;
-  }
-  50% {
-    opacity: 0.5;
-  }
+    0% {
+        background-color: rgba(0, 0, 0, 0.384);
+        color: white;
+    }
+    50% {
+        opacity: 0.5;
+    }
 }
 
 @media screen and (min-width: 500px) {
-  .touches,
-  #reset,
-  #egale {
-    width: 80px;
-    height: 80px;
-  }
-  #ecran {
-    max-width: 320px;
-  }
-  #saisis {
-    font-size: 40px;
-  }
-  #corp {
-    max-width: 400px;
-  }
+    .touches,
+    #reset,
+    #egale {
+        width: 80px;
+        height: 80px;
+    }
+    #ecran {
+        max-width: 320px;
+    }
+    #saisis {
+        font-size: 40px;
+    }
+    #corp {
+        max-width: 400px;
+    }
 }
