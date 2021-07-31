@@ -4,7 +4,6 @@ const ecran = document.getElementById("ecran");
 const saisis = document.getElementById("saisis");
 const reset = document.getElementById("reset");
 const egale = document.getElementById("egale");
-const emptyMsg = { text: "Rien à calculer", value: undefined };
 
 // event touches au clavier 
 
