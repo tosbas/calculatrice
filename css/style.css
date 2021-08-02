@@ -42,12 +42,8 @@ h1 {
     justify-content: flex-end;
     overflow: hidden;
     border: 1px solid rgb(255, 115, 0);
-}
-
-#saisis {
-    font-size: 25px;
-    padding-right: 10px;
     word-break: break-all;
+    font-size: 30px;
 }
 
 .touches,
@@ -59,42 +55,17 @@ h1 {
     font-size: 20px;
     border: 1px solid rgb(255, 115, 0);
     margin: 2px;
-}
-
-#reset,
-#egale {
-    background: #000;
-    color: White;
+    background-color: white;
 }
 
 #egale {
     font-size: 30px;
 }
 
-.touches {
-    background-color: white;
-}
-
 .anim {
     animation-name: anime;
     animation-duration: 1s;
     transition: linear;
-}
-
-.anim2 {
-    animation-name: anime2;
-    animation-duration: 1s;
-    transition: linear;
-}
-
-@keyframes anime2 {
-    0% {
-        background-color: rgb(255, 255, 255);
-        color: black;
-    }
-    50% {
-        opacity: 0.5;
-    }
 }
 
 @keyframes anime {

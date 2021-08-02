@@ -1,78 +1,61 @@
-"Use strict";
 const touches = [...document.querySelectorAll(".touches")];
 const ecran = document.getElementById("ecran");
-const saisis = document.getElementById("saisis");
-const reset = document.getElementById("reset");
-const egale = document.getElementById("egale");
+const keyCode = touches.map(touches => touches.dataset.key);
 
 // event touches au clavier 
 
 document.addEventListener("keydown", (e) => {
 
-    let reg = /[0-9,+,.,\-,\/,*]/gm.test(e.key)
+    const valeur = e.keyCode.toString();
+    calculer(valeur);
 
-    if (saisis.innerText.length == 14) {
-        ecran.style.overflowY = "scroll"
-    }
-
-    if (e.key == "Backspace") {
-        ecran.removeAttribute("style");
-        saisis.innerText = "";
-    } else if (e.key == "Enter") {
-        if (saisis.innerText != "") {
-            saisis.innerText = arrondir(eval(saisis.innerText));
-        }
-    } else if (reg == true) {
-        saisis.innerText += e.key
-    }
 })
 
-// Pour chaque touches event au click
+const calculer = (valeur) => {
 
-touches.forEach((element) => {
-    element.addEventListener("click", function() {
-        element.classList.add("anim");
+    const indexKey = keyCode.indexOf(valeur);
+    const touche = touches[indexKey];
 
-        saisis.innerText += element.innerText;
+    touche.classList.add("anim");
+    setTimeout(function() {
+        touche.classList.remove("anim");
+    }, 100);
 
-        if (saisis.innerText.length == 14) {
-            ecran.style.overflowY = "scroll"
+    if (keyCode.includes(valeur)) {
+        switch (valeur) {
+            case '8':
+                ecran.innerText = "";
+                ecran.removeAttribute("style");
+                break;
+            case '13':
+                const calcul = arrondir(eval(ecran.innerText));
+                if (ecran.innerText == "") {
+                    console.error("saisis vide !")
+                } else {
+                    ecran.innerText = calcul;
+                }
+
+                break;
+            default:
+                ecran.innerText += touche.innerHTML;
+
+                if (ecran.innerText.length == 14) {
+                    ecran.style.overflowY = "scroll";
+                }
         }
-
-        setTimeout(function() {
-            element.classList.remove("anim");
-        }, 100);
-    });
-});
-
-// calcule la somme saisis
-
-egale.addEventListener("click", () => {
-    if (saisis.innerText != "") {
-        saisis.innerText = arrondir(eval(saisis.innerText));
     }
-    egale.classList.add("anim2");
-    setTimeout(function() {
-        egale.classList.remove("anim2");
-    }, 100);
 
-});
+}
 
-// reset saisis
-
-reset.addEventListener("click", () => {
-    reset.classList.add("anim2");
-    ecran.removeAttribute("style");
-    saisis.innerText = "";
-    setTimeout(function() {
-        reset.classList.remove("anim2");
-    }, 100);
-});
-
-// function arrondir le résultat
+touches.forEach((el) => {
+    el.addEventListener("click", (e) => {
+        const valeur = e.target.dataset.key;
+        calculer(valeur);
+    })
+})
 
 function arrondir(el) {
-    let reg = /[.][1-9][0]/g.test(el);
+    let reg = /[.][1-9][0-9]/g.test(el);
     if (reg == true) {
         return eval(el).toFixed(1);
     } else {
